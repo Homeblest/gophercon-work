@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-type User struct {
+type user struct {
 	ID    int
 	First string
 	Last  string
@@ -10,17 +10,17 @@ type User struct {
 
 // Task:
 // Satisfy the stringer interface (https://golang.org/pkg/fmt/#Stringer)
-// so that the User struct will print
-// User <ID> is <First> <Last>
+// so that the user struct will print
+// user <ID> is <First> <Last>
 //
 // example:
-//      User 1 is Rob Pike
+//      user 1 is Rob Pike
 
-func (u User) String() string {
-	return fmt.Sprintf("User %d is %s %s", u.ID, u.First, u.Last)
+func (u user) String() string {
+	return fmt.Sprintf("user %d is %s %s", u.ID, u.First, u.Last)
 }
 
 func main() {
-	u := User{ID: 1, First: "Rob", Last: "Pike"}
+	u := user{ID: 1, First: "Rob", Last: "Pike"}
 	fmt.Println(u)
 }
